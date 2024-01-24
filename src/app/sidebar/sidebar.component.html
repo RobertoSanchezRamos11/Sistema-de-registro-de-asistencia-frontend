@@ -1,0 +1,66 @@
+<div class="sidebar">
+    <div class="logo">
+        <img src="../../assets/img/Logo.svg" alt="Logo de la aplicación">
+        <span>ClassKeeper</span>
+    </div>
+    <ul>
+        <li>
+            <i class="fas fa-tachometer-alt"></i>
+            <a routerLink="panel-de-control">
+                Panel de Control
+            </a>
+        </li>
+        <li>
+            <i class="fas fa-chalkboard"></i>
+            <a (click)="toggleAulasSubMenu()">
+                Aulas
+            </a>
+        </li>
+        <ul *ngIf="showAulasSubMenu" class="sub-menu">
+            <li><i class="fas fa-caret-right"></i><a routerLink="aulas/secundaria"> Secundaria</a></li>
+            <li><i class="fas fa-caret-right"></i><a routerLink="aulas/primaria"> Primaria</a></li>
+        </ul>
+        <li>
+            <i class="fas fa-chart-bar"></i>
+            <a routerLink="reportes">
+                Reportes
+            </a>
+        </li>
+        <li>
+            <i class="fas fa-users"></i>
+            <a routerLink="usuarios">
+                Usuarios
+            </a>
+        </li>
+        <li>
+            <i class="fa-solid fa-box-archive"></i>
+            <a (click)="toggleArchivosSubMenu()">
+                Archivados
+            </a>
+        </li>
+        <ul *ngIf="showArchivosSubMenu" class="sub-menu">
+            <li><i class="fas fa-user-slash"></i><a routerLink="archivados/estudiantes-inactivos"> Estudiantes
+                    Inactivos</a></li>
+        </ul>
+
+        <li>
+            <i class="fas fa-life-ring"></i>
+            <a routerLink="asistencia">
+                Asistencia
+            </a>
+        </li>
+    </ul>
+
+    <div class="cerrar-sesion">
+        <ul>
+            <li>
+                <i class="fas fa-sign-out-alt"></i>
+                <a>Cerrar Sesión</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
